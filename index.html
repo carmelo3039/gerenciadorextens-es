@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Extensions Manager</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-input">
+            <img src="./assets/images/logo.svg" class="icon-left" alt="Logo">
+            <input type="text" placeholder="" id="search-input">
+            <button class="theme-icon" id="theme-icon">
+                <img src="./assets/images/icon-sun.svg" alt="Theme toggle">
+            </button>
+        </div>
+
+        <header>
+            <h1>Extensions List</h1>
+            <div class="controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="inactive">Inactive</button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="extensions-grid" id="extensions-grid">
+                <!-- Extensions will be loaded here dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Extension Form -->
+    <div class="add-extension-form">
+        <h2>Add New Extension</h2>
+        <form id="extension-form">
+            <div class="form-group">
+                <label for="extension-name">Extension Name</label>
+                <input type="text" id="extension-name" required placeholder="Enter extension name">
+            </div>
+            <div class="form-group">
+                <label for="extension-description">Description</label>
+                <textarea id="extension-description" required placeholder="Enter extension description"></textarea>
+            </div>
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="extension-active" checked>
+                    <span class="checkbox-custom"></span>
+                    Active
+                </label>
+            </div>
+            <button type="submit" class="btn btn-submit">Add Extension</button>
+        </form>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <h3>Confirm Removal</h3>
+            <p>Are you sure you want to remove this extension?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-cancel">Cancel</button>
+                <button class="btn btn-confirm">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
